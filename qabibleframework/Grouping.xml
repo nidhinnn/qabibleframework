@@ -1,0 +1,12 @@
+<suite name= "my test suite">
+	<test name= "my test">
+		<groups>
+			<run>
+				<include name= "critical"></include>
+			</run>
+		</groups>
+		<classes>
+			<class name= "testCases.WorkerTestCases"></class>
+		</classes>
+	</test>
+</suite>
