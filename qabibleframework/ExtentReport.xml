@@ -1,10 +1,13 @@
-<suite name="My Test Suite">
+<suite name="My Test Suite" parallel="tests" thread-count="3">
+	
 	<listeners>
-		<listener class-name="utilities.ExtentReportUtility" />
+		<listener class-name="utilities.ExtentReportUtility" ></listener>
 	</listeners>
+	
 	<test name="My Test">
 		<classes>
 			<class name="testCases.LoginTestCases" />
 		</classes>
 	</test>
+	
 </suite>

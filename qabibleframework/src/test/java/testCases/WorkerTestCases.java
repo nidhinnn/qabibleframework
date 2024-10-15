@@ -27,7 +27,7 @@ public class WorkerTestCases extends BaseClass {
 
 		String actualSearch = wp.verifyTextOfSearchButton();
 		String expectedSearch = "Search";
-		Assert.assertEquals(actualSearch, expectedSearch);
+		Assert.assertEquals(actualSearch, expectedSearch, Constant.textMismatchError);
 	}
 	
 	@Test(groups = "critical")
@@ -44,7 +44,7 @@ public class WorkerTestCases extends BaseClass {
 		
 		String actualFontSize = wp.verifyFontSizeOfSearchButton();
 		String expectedFontSize = "14px";
-		Assert.assertEquals(actualFontSize, expectedFontSize, "Font size is diffrent");
+		Assert.assertEquals(actualFontSize, expectedFontSize, Constant.fontSizeError);
 	}
 	
 	@Test
@@ -61,24 +61,8 @@ public class WorkerTestCases extends BaseClass {
 		wp.clickCreateWorkerMenu();
 
 		String actual = wp.selectValueFromTitleDropDown();
-		String expected = "M";
+		String expected = "Mr";
 		Assert.assertEquals(actual, expected, Constant.errorMessageCheckBox);
 	}
-	
-	
-	@Test
-	public void verifyGenderFromDropdown() {
-		LoginPage lp = new LoginPage(driver);
-		lp.inputUsername("carol");
-		lp.inputPassword("1q2w3e4r");
-		lp.clickLoginButton();
 
-		DashboardPage dp = lp.clickLoginButton();
-		dp.clickOnWorkerMenu();
-
-		WorkerPage wp = dp.clickOnWorkerMenu();
-		wp.clickCreateWorkerMenu();
-		wp.selectValueFromGenderDropdown();
-		
-	}
 }

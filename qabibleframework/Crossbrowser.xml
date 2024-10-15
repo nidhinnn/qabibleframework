@@ -1,12 +1,29 @@
 <suite name="mytestsuite" parallel="tests" thread-count="3">
-
+	
+	<listeners>
+		<listener class-name="utilities.ExtentReportUtility" ></listener>
+	</listeners>
+	
 	<test name="chrometest">
 		<parameter name="browser" value="chrome"></parameter>
 		<classes>
-			<class name="testCases.DeductionTestCases"></class>
+			<class name="testCases.LoginTestCases"></class>
 		</classes>
 	</test>
-
+	
+	<test name= "edgetest">
+		<parameter name= "browser" value= "edge"></parameter>
+		<classes>
+			<class name= "testCases.LoginTestCases"></class>
+		</classes>
+	</test>
+	
+	<test name= "firefoxtest">
+		<parameter name= "browser" value= "firefox"></parameter>
+		<classes>
+			<class name= "testCases.LoginTestCases"></class>
+		</classes>
+	</test>
 
 
 </suite>

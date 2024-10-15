@@ -65,7 +65,7 @@ public class BaseClass {
 			cs.captureScreenShotForFailedTestcase(driver, iTestResult.getName());
 		}
 		
-		//driver.close();
+		driver.close();
 	}
 
 }

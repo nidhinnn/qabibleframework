@@ -30,9 +30,6 @@ public class WorkerPage {
 	
 	@FindBy(id = "worker-title")
 	WebElement titleDropDown;
-	
-	@FindBy(id = "worker-gender")
-	WebElement genderDropdown;
 
 	public void clickCreateWorkerMenu() {
 		createWorker.click();
@@ -48,11 +45,6 @@ public class WorkerPage {
 	
 	public String selectValueFromTitleDropDown() {
 		return gu.getSelectedValueFromDropDown(titleDropDown, "Mr");
-	}
-	
-	public String selectValueFromGenderDropdown() {
-		return gu.getSelectedValueFromDropDown(genderDropdown, "Male");
-		
 	}
 
 }

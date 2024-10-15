@@ -8,6 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import utilities.GeneralUtilities;
 
+
+
 public class DeductionPage {
 	
 	public DeductionPage(WebDriver driver) {
@@ -22,51 +24,36 @@ public class DeductionPage {
 	@FindBy(xpath = "//a[text()='Add Deduction']")
 	WebElement addDeduction;
 	
-	@FindBy(xpath = "//span[@class='select2-selection select2-selection--single']")
-	WebElement selectWorker;
-	
-	@FindBy(id = "select2-deduction-worker_id-result-sejk-1")
-	WebElement dennisBenny;
-	
-	@FindBy(id = "deduction-type")
-	WebElement selectDeductionType;
-	
-	@FindBy(id = "deduction-amount")
-	WebElement enterDeductonAmount;
-	
-	@FindBy(id = "deduction-effective_from")
-	WebElement enterDate;
-	
 	@FindBy(xpath = "//button[@class='btn btn-success']")
 	WebElement deductionSaveButton;
+	
+	@FindBy(xpath = "//p[text()='Worker cannot be blank.']")
+	WebElement workerWarningMessage;
+	
+	@FindBy(xpath = "//p[text()='Type cannot be blank.']")
+	WebElement typeWarningMessage;
+	
+	@FindBy(xpath = "//p[text()='Amount cannot be blank.']")
+	WebElement amountWarningMessage;
 	
 	public void addDeduction() {
 		addDeduction.click();
 	}
 	
-	public void selectWorker() {
-		selectWorker.click();
-		//dennisBenny.click();
-	}
-	
-	public void dennisBenny() {
-		dennisBenny.click();
-	}
-	
-	public String selectDeductionType() {
-		return gu.getSelectedValueFromDropDown(selectDeductionType, "CRB");
-	}
-	
-	public void enterDeductonAmount() {
-		enterDeductonAmount.sendKeys("25000");
-	}
-	
-	public void enterDate() {
-		enterDate.sendKeys("07-10-2024");
-	}
-	
 	public void deductionSaveButton() {
 		deductionSaveButton.click();
+	}
+	
+	public String verifyWorkerWarning() {
+		return gu.getElementText(workerWarningMessage);
+	}
+	
+	public String verifyTypeWorkerWarning() {
+		return gu.getElementText(typeWarningMessage);
+	}
+	
+	public String verifyAmountWarning() {
+		return gu.getElementText(amountWarningMessage);
 	}
 
 }

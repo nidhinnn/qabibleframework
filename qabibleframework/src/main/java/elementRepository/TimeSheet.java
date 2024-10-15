@@ -21,6 +21,9 @@ public class TimeSheet {
 	@FindBy(xpath = "//button[@class='btn btn-warning btn-responsive invoice']")
 	WebElement generateInvoiceButton;
 	
+	@FindBy(xpath = "//a[text()='Create Timesheet']")
+	WebElement createTimesheet;
+	
 	public String clickOkOnAlertOfGeneratePlayslipButton() {
 		generatePlayslipButton.click();
 		return gu.clickOkButtonOfAlerts(driver);
@@ -39,6 +42,10 @@ public class TimeSheet {
 	public String clickCancelOnAlertOfgenerateInvoiceButton() {
 		generateInvoiceButton.click();
 		return gu.clickCancelButtonOfAlerts(driver);
+	}
+	
+	public void clickCreateTimesheetButton() {
+		createTimesheet.click();	
 	}
 
 }

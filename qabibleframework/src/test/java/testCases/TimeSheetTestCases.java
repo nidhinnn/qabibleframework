@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.BaseClass;
+import constant.Constant;
 import elementRepository.DashboardPage;
 import elementRepository.LoginPage;
 import elementRepository.TimeSheet;
@@ -25,7 +26,7 @@ public class TimeSheetTestCases extends BaseClass {
 		TimeSheet ts = dp.clickOnTimeSheetMenu();
 		String actual = ts.clickOkOnAlertOfGeneratePlayslipButton();
 		String expected = "Are you sure you want to generate payslip?";
-		Assert.assertEquals(actual, expected, "Error in alerts");
+		Assert.assertEquals(actual, expected, Constant.alertsError);
 
 	}
 
@@ -43,7 +44,7 @@ public class TimeSheetTestCases extends BaseClass {
 		TimeSheet ts = dp.clickOnTimeSheetMenu();
 		String actual = ts.clickCancelOnAlertOfGeneratePlayslipButton();
 		String expected = "Are you sure you want to generate payslip?";
-		Assert.assertEquals(actual, expected, "Error in alerts");
+		Assert.assertEquals(actual, expected, Constant.alertsError);
 
 	}
 	
@@ -61,7 +62,7 @@ public class TimeSheetTestCases extends BaseClass {
 		TimeSheet ts = dp.clickOnTimeSheetMenu();
 		String actual = ts.clickOkOnAlertOfgenerateInvoiceButton();
 		String expected = "Are you sure you want to generate invoice?";
-		Assert.assertEquals(actual, expected, "Error in alerts");
+		Assert.assertEquals(actual, expected, Constant.alertsError);
 		
 	}
 	
@@ -79,7 +80,7 @@ public class TimeSheetTestCases extends BaseClass {
 		TimeSheet ts = dp.clickOnTimeSheetMenu();
 		String actual = ts.clickCancelOnAlertOfgenerateInvoiceButton();
 		String expected = "Are you sure you want to generate invoice?";
-		Assert.assertEquals(actual, expected, "Error in alerts");
+		Assert.assertEquals(actual, expected, Constant.alertsError);
 		
 	}
 
